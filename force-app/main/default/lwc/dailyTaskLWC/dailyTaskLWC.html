@@ -1,0 +1,15 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-horizontal_small">
+            <lightning-tabset>
+                    <lightning-tab label="List">
+                        <c-daily-task-list tasks={currentTasks} ontaskdeleted={taskListUpdatedHandler}>
+                        </c-daily-task-list>
+                    </lightning-tab>
+                    <lightning-tab label="Create">
+                        <c-daily-task-create ontaskcreated={taskListUpdatedHandler}></c-daily-task-create>
+                    </lightning-tab>
+            </lightning-tabset>
+        </div>
+    </lightning-card>
+</template>
