@@ -1,7 +1,12 @@
 <template>
-    <lightning-record-form
+    <lightning-record-edit-form
             object-api-name={objectApiName}
-            fields={fields}
             onsuccess={handleSuccess}>
-    </lightning-record-form>
+        <lightning-input-field field-name="Name"></lightning-input-field>
+        <lightning-input-field field-name="Description__c"></lightning-input-field>
+        <div class="slds-m-top_medium">
+            <lightning-button class="slds-m-top_small" type="submit" name="save" label="Save Daily Task">
+            </lightning-button>
+        </div>
+    </lightning-record-edit-form>
 </template>

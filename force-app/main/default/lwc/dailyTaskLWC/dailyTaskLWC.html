@@ -1,14 +1,20 @@
 <template>
     <lightning-card>
-        <div class="slds-p-horizontal_small">
+        <div class="slds-p-horizontal_small" id="tabset-template">
             <lightning-tabset>
-                    <lightning-tab label="List">
-                        <c-daily-task-list tasks={currentTasks} ontaskdeleted={taskListUpdatedHandler}>
+                    <lightning-tab label="List" value="list">
+                        <c-daily-task-list tasks={currentTasks} ontaskdeleted={taskDeleteHandler} ontaskedit={taskEditHandler}>
                         </c-daily-task-list>
                     </lightning-tab>
-                    <lightning-tab label="Create">
-                        <c-daily-task-create ontaskcreated={taskListUpdatedHandler}></c-daily-task-create>
+                    <lightning-tab label="Create" value="create">
+                        <c-daily-task-create ontaskcreated={taskCreatedHandler}></c-daily-task-create>
                     </lightning-tab>
+                    <template for:each={editableTasks} for:item="editableTask">
+                        <lightning-tab label={editableTask.Name} value={editableTask.Id} key={editableTask.Id}>
+                            <c-daily-task-edit record={editableTask.Id} ontaskupdated={taskUpdateHandler}>
+                            </c-daily-task-edit>
+                        </lightning-tab>
+                    </template>
             </lightning-tabset>
         </div>
     </lightning-card>

@@ -27,6 +27,12 @@ export default class DailyTaskTile extends LightningElement {
             })
     }
 
+    editTask() {
+        const event = new CustomEvent('taskedit', {detail: this.task});
+        // Fire the event from c-tile
+        this.dispatchEvent(event);
+    }
+
     _taskDeleted() {
         console.log(`Task with id - ${this.task.Id} successfully deleted`)
         const event = new CustomEvent('taskdeleted');

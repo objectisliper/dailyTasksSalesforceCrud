@@ -1,7 +1,7 @@
 <template>
     <template for:each={tasks} for:item="task">
         <c-daily-task-tile onerroroccurred={errorOccurredHandler} ontaskdeleted={taskDeletedHandler}
-                           if:false={error} key={task.Id} task={task}>
+                           if:false={error} key={task.Id} task={task} ontaskedit={taskEditHandler}>
         </c-daily-task-tile>
     </template>
     <template if:true={error}>

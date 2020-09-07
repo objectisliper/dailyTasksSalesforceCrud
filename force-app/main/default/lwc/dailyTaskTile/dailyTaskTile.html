@@ -1,6 +1,6 @@
 <template>
     <lightning-card title={task.Name}>
-        <lightning-button label="Edit" slot="actions" class="slds-m-right_x-small"></lightning-button>
+        <lightning-button label="Edit" slot="actions" class="slds-m-right_x-small" onclick={editTask}></lightning-button>
         <lightning-button label="Delete" slot="actions" onclick={deleteTask} ></lightning-button>
         <p class="slds-p-horizontal_medium" if:true={isShowDescription}>{task.Description__c}</p>
         <template if:true={isDescriptionExist}>

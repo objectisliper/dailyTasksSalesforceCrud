@@ -13,4 +13,10 @@ export default class DailyTaskList extends LightningElement {
         // Fire the event from c-list
         this.dispatchEvent(event);
     }
+
+    taskEditHandler(event) {
+        const editEvent = new CustomEvent('taskedit', {detail: event.detail});
+        // Fire the event from c-list
+        this.dispatchEvent(editEvent);
+    }
 }
