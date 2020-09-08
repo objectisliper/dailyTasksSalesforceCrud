@@ -51,6 +51,7 @@ export default class DailyTaskLWC extends LightningElement {
         getCurrentUserDailyTaskList()
             .then(result => {
                 this._tasksList = result;
+
                 this._taskEditList = this._taskEditList.filter(item => result.map(task => task.Id).includes(item.Id))
                     .map(item => result.find(task => task.Id === item.Id));
             })

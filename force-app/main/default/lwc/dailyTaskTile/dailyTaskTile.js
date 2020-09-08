@@ -15,7 +15,7 @@ export default class DailyTaskTile extends LightningElement {
     }
 
     toggleDescription() {
-        this._isShowDescription = !this.isShowDescription;
+        this._isShowDescription = !this._isShowDescription;
     }
 
     deleteTask() {
