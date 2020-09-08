@@ -1,14 +1,10 @@
 import {LightningElement} from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
-import NAME_FIELD from '@salesforce/schema/Daily_Task__c.Name';
-import DESCRIPTION_FIELD from '@salesforce/schema/Daily_Task__c.Description__c';
-
 export default class DailyTaskCreate extends LightningElement {
     objectApiName = 'Daily_Task__c';
 
     handleSuccess(event) {
-
         this._showToast(event);
 
         this._resetForm();

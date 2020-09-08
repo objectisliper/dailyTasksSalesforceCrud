@@ -4,7 +4,7 @@ public with sharing class DailyTaskController {
 	public static List<Daily_Task__c> getCurrentUserDailyTaskList() {
 		return [SELECT Id, Name, Description__c
 				FROM Daily_Task__c
-				WHERE OwnerId = :UserInfo.getUserId() AND CreatedDate > :Date.today().addDays(-1)
+				WHERE OwnerId = :UserInfo.getUserId() AND CreatedDate > :Date.today()
 				ORDER BY CreatedDate];
 	}
 
